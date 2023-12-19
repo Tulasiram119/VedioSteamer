@@ -1,15 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
 const SideBar = () => {
   const theme = useSelector((store) => store.theme);
   const color = theme.color === "white" ? "black" : "white";
   return (
     <div
-      className={` p-4 shadow-lg md:w-48 w-32 text-${theme.color} bg-${color}`}
+      className={` p-4 shadow-lg md:w-48 w-32 text-${theme.color} bg-${color} fixed md:top-20 top-10 h-full`}
     >
       <ul>
-        <li>Music</li>
+        <Link to="/"><li>Home</li></Link>
         <li>Sports</li>
         <li>Enterainment</li>
         <li>Movies</li>

@@ -7,12 +7,11 @@ const useAddPopularVedios = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     getVedios();
-  });
+  }, []);
   const getVedios = async () => {
     const data = await fetch(YOUTUBE_API);
     const json = await data.json();
     dispatch(addPopularMovies(json?.items));
-    console.log(json.items);
   };
 };
 
