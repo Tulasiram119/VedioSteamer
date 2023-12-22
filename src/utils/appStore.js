@@ -3,6 +3,7 @@ import themeReducer from "./themeSlice";
 import appReducer from "./appSlice";
 import vedioSlice from "./vedioSlice";
 import searchSlice from "./searchSlice";
+import chartSlice from "./chartSlice";
 
 const appStore = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const appStore = configureStore({
     appSlice: appReducer,
     vedioReducer: vedioSlice,
     search: searchSlice,
+    chat: chartSlice
   },
 });
 

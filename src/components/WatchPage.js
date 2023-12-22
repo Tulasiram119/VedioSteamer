@@ -3,14 +3,16 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
 import { useParams, useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
+import LiveChart from "./LiveChart";
 const WatchPage = () => {
   const dispatch = useDispatch();
   const [params] = useSearchParams();
   useEffect(() => {
     dispatch(closeMenu());
   }, []);
-  console.log(params.get("v"));
+  
   return (
+    
     <div className="w-full">
     <div className="wrapper">
       <iframe        
@@ -22,11 +24,18 @@ const WatchPage = () => {
         className=""
         
       ></iframe>
+      <div>
+      <LiveChart />
     </div>
-    <div>
-      <CommentsContainer />
     </div>
+    
+    
+    <CommentsContainer />
+  
+  
     </div>
+    
+    
   );
 };
 
